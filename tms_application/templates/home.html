@@ -1,0 +1,366 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+{% if user.is_authenticated %}
+
+<style>
+.booking .index-content{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+}
+
+.booking .index-content h1{
+  font-size: 50px;
+  margin-top: 80px;
+}
+.booking .index-content p{
+  margin: 20px auto;
+  font-weight: 100; 
+  line-height: 25px;
+}
+
+.booking .index-content .mybutton{
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #0594fc;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.booking .index-content .mybutton a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.booking .index-span{
+  background: #0594fc;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+
+
+.booking .mybutton:hover span{
+  width: 100%;
+}
+
+</style>
+
+  <main class="main bg-dark">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="{% static 'images/world-dotted-map.png' %}" alt="" class="hero-bg">
+
+      <div class="container">
+        <div class="row gy-4 d-flex justify-content-between">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h2>Your Lightning Fast Delivery Partner</h2>
+            <p>Simplify your transportation needs with our all-in-one solution. Our platform offers seamless management of shipments, drivers, and trucks, ensuring efficiency and reliability every step of the way. Whether you're booking shipments, tracking deliveries, we provide tools to streamline your logistics operations.</p>
+
+            <div class="row gy-4">
+
+              <div class="col-lg-3 col-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="0" class="purecounter">232</span>
+                  <p>Clients</p>
+                </div>
+              </div><!-- End Stats Item -->
+
+
+              <div class="col-lg-3 col-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="0" class="purecounter">1453</span>
+                  <p>Support</p>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-3 col-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="0" class="purecounter">32</span>
+                  <p>Workers</p>
+                </div>
+              </div><!-- End Stats Item -->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 hero-img">
+            <img src="{% static 'images/hero-img.svg' %}" class="img-fluid mb-3 mb-lg-0" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+    <!-- Booking section -->
+
+    <!-- Services Section -->
+    <section id="booking" class="booking section" style="background-color: #001f4d;">
+      
+      {% if role == 'guest' %}
+      <p>Please log in to see driver dashboard.</p>
+      {% endif %}
+
+      {% if role == 'driver' %}
+            <!-- Section Title -->
+      <div class="container section-title">
+        <span style="z-index: 10000; color: color-mix(in srgb, #ffffff, transparent 95%);">Driver Support<br></span>
+        <h2 style="color: #ffffff;">Driver Support</h2>
+      </div><!-- End Section Title -->
+      <main class="container">
+          <div class="bg-body-tertiary p-5 rounded mt-3">
+              <h1>Add Driver</h1>
+              <a href="{% url 'add_driver' %}"><button type="button" class="btn btn-primary btn-lg">Click
+                  Here &raquo;</button></a> 
+          </div>
+      </main>
+      {% endif %}
+      
+
+
+      {% if role == 'customer' %}
+
+       <!--Section Title -->
+      <div class="container section-title">
+        <span style="z-index: 10000; color: color-mix(in srgb, #ffffff, transparent 95%);">Booking Shipment<br></span>
+        <h2 style="color: #ffffff;">Booking Shipment</h2>
+      </div><!-- End Section Title -->
+      <main class="container">
+        <div class="bg-body-tertiary p-5 rounded mt-3">
+            <h1>Add Customer</h1>
+            <a href="{% url 'add_customer' %}"><button type="button" class="btn btn-primary btn-lg">Click
+                Here &raquo;</button></a> 
+        </div>
+    </main>
+    <main class="container">
+        <div class="bg-body-tertiary p-5 rounded mt-3">
+            <h1>Add Shipment</h1>
+            <a href="{% url 'add_shipment' %}"><button type="button" class="btn btn-primary btn-lg">Click
+                Here &raquo;</button></a> 
+        </div>
+    </main>
+
+    <main class="container">
+        <div class="bg-body-tertiary p-5 rounded mt-3">
+            <h1>Track Shipment</h1>
+            <a href="{% url 'track' %}"><button type="button" class="btn btn-primary btn-lg">Click
+                Here &raquo;</button></a> 
+        </div>
+    </main>
+    {% endif %}
+
+
+    </section><!-- /Booking section -->
+
+
+    <!-- Featured Services Section -->
+    <!-- /Featured Services Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
+            <img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="">
+            <a href="" class="glightbox pulsating-play-btn"></a>
+          </div>
+
+          <div class="col-lg-6 content order-last  order-lg-first">
+            <h3>About Us</h3>
+            <p>
+              We are committed to revolutionizing logistics and transportation management. With a focus on efficiency and reliability, our platform empowers businesses to streamline operations, enhance productivity, and deliver exceptional services.
+            </p>
+            <ul>
+              <li>
+                <i class="bi bi-diagram-3"></i>
+                <div>
+                  <h5>Simplified Logistics Management</h5>
+                  <p>Seamlessly manage shipments, trucks, and drivers to ensure smooth transportation operations.</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-fullscreen-exit"></i>
+                <div>
+                  <h5>Customized Solutions for Your Needs</h5>
+                  <p>Tailored tools and services designed to fit diverse logistics requirements effectively.</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-broadcast"></i>
+                <div>
+                  <h5>Committed to Excellence</h5>
+                  <p>Dedicated to delivering solutions that ensure timely deliveries and customer satisfaction.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <span>Our Services<br></span>
+        <h2>Our ServiceS</h2>
+        <p>We provide comprehensive solutions tailored to meet your logistics and transportation needs.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static 'images/service-2.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Logistics</a></h3>
+              <p>Efficiently manage your supply chain with our advanced tools and services to streamline operations.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static 'images/service-3.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Cargo</a></h3>
+              <p>Secure and reliable transportation of goods, ensuring timely deliveries and customer satisfaction.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static 'images/service-4.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Trucking</a></h3>
+              <p>Professional trucking services designed to handle shipments of any size or type with utmost care and efficiency.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Call To Action Section -->
+    <!-- /Call To Action Section -->
+
+    <!-- Features Section -->
+
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <span>Pricing</span>
+        <h2>Pricing</h2>
+        <p>Explore our flexible plans to suit your transportation needs.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Base Plan</h3>
+              <h4><sup>₹</sup>499<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Access to basic features</span></li>
+                <li><i class="bi bi-check"></i> <span>Limited reporting and analytics</span></li>
+                <li><i class="bi bi-check"></i> <span>Community support</span></li>
+                <li><i class="bi bi-check"></i> <span>Limited advanced functionalities.</span></li>
+              </ul>
+              <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4">
+            <div class="pricing-item featured">
+              <h3>Business Plan</h3>
+              <h4><sup>₹</sup>2499<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Access to advanced features</span></li>
+                <li><i class="bi bi-check"></i> <span>Priority customer support</span></li>
+                <li><i class="bi bi-check"></i> <span>Integration with third-party services</span></li>
+                <li><i class="bi bi-check"></i> <span>Unlimited booking and shipment management</span></li>
+              </ul>
+              <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Developer Plan</h3>
+              <h4><sup>₹</sup>3999<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Full API access for integration</span></li>
+                <li><i class="bi bi-check"></i> <span>Customizable dashboards and reports</span></li>
+                <li><i class="bi bi-check"></i> <span>Dedicated account manager</span></li>
+                <li><i class="bi bi-check"></i> <span>Advanced analytics and AI-powered insights</span></li>
+              </ul>
+              <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+          </div><!-- End Pricing Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Testimonials Section -->
+<!-- /Testimonials Section -->
+
+    <!-- Faq Section -->
+<!-- /Faq Section -->
+
+  </main>
+
+
+  {% else %}
+  <p>Please log in to see your dashboard.</p>
+{% endif %}
+
+{% endblock %}

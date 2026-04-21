@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign UP</title>
+  <link rel="stylesheet" href="{% static 'css/Log.css' %}">
+  <link rel="icon" href="{% static 'images/logo1.png' %}" type="image/png">
+
+</head>
+<body>
+  <section>
+    <div class="form-box" style="width: 420px; height: 500px;">
+      <div class="form-value">
+        <!-- Register Section -->
+        <div class="login" id="register-section">
+          <form action="{% url 'sign_up' %}" method="post">
+            {% csrf_token %}
+            <h2>Register</h2>
+            <div class="inputbox">
+              <ion-icon name=""></ion-icon>
+              <input type="text" name="username" required>
+              <label for="">Name</label>
+            </div>
+            <div class="inputbox">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input type="password" name="password" required>
+              <label for="">Password</label>
+            </div>
+  
+            <!-- Role Selection -->
+            <div class="form-check" style="margin-bottom: 5px;">
+              <input class="form-check-input" type="radio" name="role" value="customer" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1" style="color: white; cursor: pointer;">
+                Customer
+              </label>
+            </div>
+            <div class="form-check" style="margin-bottom: 30px;">
+              <input class="form-check-input" type="radio" name="role" value="driver" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2" style="color: white; cursor: pointer;">
+                Driver
+              </label>
+            </div>
+  
+            <div class="forget">
+              <label for=""><input type="checkbox">Remember me <a href="#">Forget Password</a></label>
+            </div>
+            <button type="submit">Register</button>
+            <div class="register">
+              <p>Already have an account? <a href="/login">Login</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>

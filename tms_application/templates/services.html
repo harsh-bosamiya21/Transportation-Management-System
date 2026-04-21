@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url(../static/images/Designer2.png);">
+      <div class="container position-relative">
+        <h1>Services</h1>
+        <p>Explore our wide range of logistics and transportation services designed to meet your business needs efficiently and reliably.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Services</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-cart-flatbed"></i></div>
+            <div>
+              <h4 class="title">Shipment Management</h4>
+              <p class="description">Streamline your logistics with advanced tracking solutions.
+                We enable seamless shipment management, offering live tracking, real-time updates, and automated documentation to keep your business running smoothly.</p>
+              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck"></i></div>
+            <div>
+              <h4 class="title">Fleet Optimization</h4>
+              <p class="description">Maximize efficiency with tailored fleet solutions.
+                Our advanced algorithms optimize your truck assignments and routes, ensuring reduced fuel costs and faster delivery times.</p>
+              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div>
+              <h4 class="title">Warehouse Solutions</h4>
+              <p class="description">Efficiently manage inventory and storage operations.
+                From inventory tracking to automated storage systems, our solutions help you manage your warehouses effortlessly, reducing overhead costs and improving accuracy.</p>
+              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <span>Our Services<br></span>
+        <h2>Our ServiceS</h2>
+        <p>We provide comprehensive solutions tailored to meet your logistics and transportation needs.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static 'images/service-1.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <h3>Storage</h3>
+              <p>Secure and Flexible Storage Solutions
+                We provide reliable and scalable storage facilities to keep your goods safe and organized. Whether you need short-term or long-term storage.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static 'images/service-2.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Logistics</a></h3>
+              <p>Efficiently manage your supply chain with our advanced tools and services to streamline operations.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static 'images/service-3.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Cargo</a></h3>
+              <p>Secure and reliable transportation of goods, ensuring timely deliveries and customer satisfaction.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static 'images/service-4.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Trucking</a></h3>
+              <p>Professional trucking services designed to handle shipments of any size or type with utmost care and efficiency.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static 'images/service-5.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <h3>Packaging</h3>
+              <p>Professional Packaging for Safe Deliveries
+                Our packaging services ensure that your goods are secure and protected during transit. Using high-quality materials and expert techniques.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static 'images/service-6.jpg' %}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">Warehousing</a></h3>
+              <p>treamlined Inventory and Warehouse Management
+                Our state-of-the-art warehousing solutions are designed to optimize inventory management, reduce costs, and improve efficiency.</p>
+            </div>
+          </div><!-- End Card Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <span>Features</span>
+        <h2>Features</h2>
+        <p>Discover the key benefits and exclusive features that make our services exceptional.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center">
+            <img src="{% static 'images/features-1.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7">
+            <h3>At TMS, we are committed to delivering value through services designed to meet all your logistics and transportation needs.</h3>
+            <ul>
+              <li><i class="bi bi-check"></i><span> Efficient and Timely Deliveries</span></li>
+              <li><i class="bi bi-check"></i> <span>Uncompromised Security</span></li>
+              <li><i class="bi bi-check"></i> <span>Real-Time Tracking</span></li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center">
+            <img src="{% static 'images/features-2.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1">
+            <h3>Delivering Excellence in Every Mile: Explore Our Tailored Logistics Solution</h3>
+            <p class="fst-italic">
+              Our goal is to redefine the logistics experience through reliable, efficient, and customer-centric services. Whether it's transporting goods, warehousing solutions, or supply chain management, we ensure smooth operations from start to finish.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i><span> Fast Deliveries</span></li>
+              <li><i class="bi bi-check"></i> <span>Safe & Secure</span></li>
+              <li><i class="bi bi-check"></i> <span>Expert Support</span></li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center">
+            <img src="{% static 'images/features-3.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7">
+            <h3>Making Your Delivery Experience Effortless and Reliable</h3>
+            <p>We are committed to providing top-notch services that meet your logistics needs. Whether it's handling deliveries, offering customized solutions, or ensuring the best customer experience</p>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>Customized Delivery Services.</span></li>
+              <li><i class="bi bi-check"></i><span> Efficient Operations</span>.</li>
+              <li><i class="bi bi-check"></i> <span>Environmentally Responsible</span>.</li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center">
+            <img src="{% static 'images/features-4.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1">
+            <h3>Connecting the World with Reliable Shipping Solutions</h3>
+            <p class="fst-italic">
+              At TMS, we specialize in seamless freight forwarding services, ensuring your goods reach their destination safely and on time.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>Reliable Partnerships.</span></li>
+              <li><i class="bi bi-check"></i><span> Custom Solutions</span>.</li>
+              <li><i class="bi bi-check"></i> <span>Sustainable Practices</span>.</li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Testimonials Section -->
+<!-- /Faq Section -->
+
+  </main>
+{% endblock %}

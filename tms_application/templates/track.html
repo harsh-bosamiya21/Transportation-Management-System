@@ -1,0 +1,51 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main class="main">
+ <!-- Page Title -->
+ <div class="page-title dark-background" style="background-image: url(../static/images/Designer2.png);">
+    <div class="container position-relative">
+      <h1>Track your package</h1>
+      <p>Track your shipment in real-time and stay updated on its journey, ensuring timely delivery with complete transparency.</p>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li class="current">Track</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+  <div class="container mt-5">
+    <h1>Track Your Package</h1>
+    {% if shipment %}
+        <div class="alert alert-info" role="alert">
+            <div class="alert-brand">
+              <img class="text-center" src="{% static 'images/features-1.jpg' %}" alt="" width="100%">
+            </div>
+            <h4 class="alert-heading py-2 my-2">Tracking ID: {{ shipment.tracking_id }}</h4>
+            <p>Receiver: {{ shipment.customer }}</p>
+            <p>Status: <strong>{{ shipment.status }}</strong></p>
+            <hr>
+            <p class="mb-0">Last updated: {{ package.updated_at }}</p>
+        </div>
+    {% else %}
+        <form method="post" class="mx-2 px-2 my-3 py-3">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Track Package</button>
+            </div>
+        </form>
+    {% endif %}
+</div>
+  <!-- form here -->
+  <!-- <form class="mx-2 px-2 my-3 py-3">
+    <div class="mb-3">
+      <label for="TrackingNumber" class="form-label">Tracking Number</label>
+      <input type="text" class="form-control" id="TrackingNumber" aria-describedby="track">
+    </div> -->
+    
+  </form>
+</main>
+{% endblock %}
